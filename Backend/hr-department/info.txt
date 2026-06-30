@@ -1,0 +1,158 @@
+# Core HR Modules for an Enterprise ERP
+## 1. Employee Management
+The central module that stores and manages all employee information.
+
+**Purpose**
+* Employee Profile
+* Department
+* Designation
+* Manager
+* Contact Details
+* Employment Status
+
+---
+
+## 2. Recruitment (Talent Acquisition)
+
+Manages the complete hiring process.
+
+**Purpose**
+
+* Job Openings
+* Candidates
+* Interviews
+* Offer Letters
+* Hiring Status
+
+---
+
+## 3. Onboarding
+
+Handles everything required when a new employee joins.
+
+**Purpose**
+
+* Document Verification
+* Employee ID Creation
+* Email & Account Creation
+* Laptop Assignment
+* Orientation
+
+---
+
+## 4. Attendance Management
+
+Tracks employee attendance and working hours.
+
+**Purpose**
+
+* Check In / Check Out
+* Working Hours
+* Overtime
+* Attendance Reports
+
+---
+
+## 5. Leave Management
+
+Manages employee leave requests and approvals.
+
+**Purpose**
+
+* Leave Application
+* Leave Approval
+* Leave Balance
+* Holiday Calendar
+
+---
+
+## 6. Payroll Management
+
+Calculates and processes employee salaries.
+
+**Purpose**
+
+* Salary Processing
+* Tax Calculation
+* Bonuses
+* Deductions
+* Payslips
+
+---
+
+## 7. Performance Management
+
+Evaluates employee performance.
+
+**Purpose**
+
+* Goals
+* Performance Reviews
+* Ratings
+* Promotions
+* Salary Increments
+
+---
+
+## 8. Learning & Development (Training)
+
+Tracks employee learning and skill development.
+
+**Purpose**
+
+* Training Programs
+* Certifications
+* Skill Development
+* Learning Progress
+
+---
+
+## 9. Document Management
+
+Stores employee-related documents securely.
+
+**Purpose**
+
+* Resume
+* Offer Letter
+* Educational Certificates
+* Identity Documents
+* Salary Slips
+
+---
+
+## 10. Exit Management
+
+Handles the employee resignation process.
+
+**Purpose**
+
+* Resignation
+* Notice Period
+* Asset Return
+* Final Settlement
+* Experience Letter
+
+---
+
+# HR Module Flow
+
+Recruitment
+↓
+Onboarding
+↓
+Employee Management
+↓
+Attendance
+↓
+Leave Management
+↓
+Payroll
+↓
+Performance Management
+↓
+Training
+↓
+Exit Management
+
+Throughout the employee lifecycle, the Document Management module stores all important employee records.
