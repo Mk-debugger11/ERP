@@ -1,0 +1,59 @@
+----------------------------------------------------------------------
+1. DEPARTMENTS ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/departments/          List all departments
+POST   /api/hr/departments/          Create a new department
+GET    /api/hr/departments/{id}/     Retrieve department details
+PUT    /api/hr/departments/{id}/     Update entire department
+PATCH  /api/hr/departments/{id}/     Partial update department
+DELETE /api/hr/departments/{id}/     Delete a department
+
+----------------------------------------------------------------------
+2. DESIGNATIONS ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/designations/         List all designations
+POST   /api/hr/designations/         Create a new designation
+GET    /api/hr/designations/{id}/    Retrieve designation details
+PUT    /api/hr/designations/{id}/    Update entire designation
+PATCH  /api/hr/designations/{id}/    Partial update designation
+DELETE /api/hr/designations/{id}/    Delete a designation
+
+----------------------------------------------------------------------
+3. EMPLOYMENT TYPES ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/employment-types/      List all employment types
+POST   /api/hr/employment-types/      Create a new employment type
+GET    /api/hr/employment-types/{id}/ Retrieve employment type details
+PUT    /api/hr/employment-types/{id}/ Update entire employment type
+PATCH  /api/hr/employment-types/{id}/ Partial update employment type
+DELETE /api/hr/employment-types/{id}/ Delete an employment type
+
+----------------------------------------------------------------------
+4. BRANCHES ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/branches/             List all company branches
+POST   /api/hr/branches/             Create a new branch
+GET    /api/hr/branches/{id}/        Retrieve branch details
+PUT    /api/hr/branches/{id}/        Update entire branch
+PATCH  /api/hr/branches/{id}/        Partial update branch
+DELETE /api/hr/branches/{id}/        Delete a branch
+
+----------------------------------------------------------------------
+5. TEAMS ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/teams/                List all sub-teams
+POST   /api/hr/teams/                Create a new sub-team
+GET    /api/hr/teams/{id}/           Retrieve sub-team details
+PUT    /api/hr/teams/{id}/           Update entire sub-team
+PATCH  /api/hr/teams/{id}/           Partial update sub-team
+DELETE /api/hr/teams/{id}/           Delete a sub-team
+
+----------------------------------------------------------------------
+6. EMPLOYEES ENDPOINTS
+----------------------------------------------------------------------
+GET    /api/hr/employees/            List all employees
+POST   /api/hr/employees/            Create a new employee record
+GET    /api/hr/employees/{id}/       Retrieve employee (detailed view)
+PUT    /api/hr/employees/{id}/       Update entire employee record
+PATCH  /api/hr/employees/{id}/       Partial update employee record
+DELETE /api/hr/employees/{id}/       Delete an employee record

@@ -1,0 +1,39 @@
+Purpose of this module.
+1. To become the single source of truth for every employee in the company.
+
+What problem does this module solve?
+Suppose diff departments store the employee info seprately lile :-
+
+HR- Rahul Sharma, Software Engineer, Engineering
+Attendance- Rahul S., Engineer, Development
+
+Every department store diff name diff Designation diff skills and HR gets updated to senior software engineer but attendance remains software to solve this a central employee record is created.
+
+The employee module exist because employee is a core buisness entity that is shared accross the buisness
+
+Employee
+──────────────────────────────
+Employee ID
+First Name
+Last Name
+Photo
+Email
+Phone
+Date of Birth
+Gender
+
+Department
+Designation
+Reporting Manager
+Office/Branch
+Joining Date
+Employment Type
+Employee Status
+
+Emergency Contact
+
+Skills (or references to skills)
+
+Education
+
+Experience
