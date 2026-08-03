@@ -16,6 +16,8 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useEmployees } from '@/features/employee/api';
+import { useDepartments } from '@/features/department/api';
 
 interface NavGroup {
   title?: string;
@@ -24,6 +26,7 @@ interface NavGroup {
     to: string;
     icon: React.ElementType;
     badge?: string;
+    disabled?: boolean;
   }[];
 }
 
@@ -48,13 +51,21 @@ const navGroups: NavGroup[] = [
     title: 'SYSTEM CONFIG',
     items: [
       { name: 'Employment Types', to: '/employment-types', icon: FileBadge },
-      { name: 'Settings', to: '/settings', icon: Settings },
+      { name: 'Settings', to: '/settings', icon: Settings, disabled: true },
     ],
   },
 ];
 
 export const Sidebar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const { data: employees } = useEmployees();
+  const { data: departments } = useDepartments();
+
+  const getDynamicBadge = (name: string, defaultBadge?: string) => {
+    if (name === 'Employees' && employees) return employees.length.toString();
+    if (name === 'Departments' && departments) return departments.length.toString();
+    return defaultBadge;
+  };
 
   return (
     <aside
@@ -110,11 +121,15 @@ export const Sidebar: React.FC = () => {
             {group.items.map((item) => (
               <NavLink
                 key={item.to}
-                to={item.to}
+                to={item.disabled ? '#' : item.to}
+                onClick={(e) => {
+                  if (item.disabled) e.preventDefault();
+                }}
                 className={({ isActive }) =>
                   cn(
                     'flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group relative',
-                    isActive
+                    item.disabled && 'opacity-50 pointer-events-none grayscale',
+                    isActive && !item.disabled
                       ? 'bg-primary/10 text-primary font-semibold shadow-subtle border border-primary/20'
                       : 'text-secondary-foreground hover:bg-secondary hover:text-foreground'
                   )
@@ -132,14 +147,14 @@ export const Sidebar: React.FC = () => {
                       {!collapsed && <span className="truncate">{item.name}</span>}
                     </div>
 
-                    {!collapsed && item.badge && (
+                    {!collapsed && getDynamicBadge(item.name, item.badge) && (
                       <span
                         className={cn(
                           'text-[11px] font-bold px-2 py-0.5 rounded-full',
                           isActive ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'
                         )}
                       >
-                        {item.badge}
+                        {getDynamicBadge(item.name, item.badge)}
                       </span>
                     )}
 
