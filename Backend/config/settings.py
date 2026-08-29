@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-m8dwbck-jj(-xu35x)me77dqi(^gqh%@q%)zufq6^(w%1yiwa3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,15 +83,12 @@ load_dotenv()
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=True
+        conn_max_age=600
     )
 }
 # Fallback to standard ssl mode if the url specifies it
 if 'neon.tech' in os.environ.get('DATABASE_URL', ''):
     DATABASES['default']['OPTIONS'] = {'sslmode': 'require'}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -127,4 +124,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT=BASE_DIR / 'staticfiles'
