@@ -1,6 +1,6 @@
 name: Test Pipeline 
 on: 
-  push
+  push:
 jobs:
   test-backend:
     runs-on: ubuntu-latest

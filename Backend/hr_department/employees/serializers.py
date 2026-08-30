@@ -4,7 +4,7 @@ from .models import Department, Designation, EmploymentType, Branch, Team, Emplo
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Department
+        model = Departments
         fields = '__all__'
         read_only_fields = ('id', 'created_at', 'updated_at')
 
