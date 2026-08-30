@@ -17,5 +17,7 @@ jobs:
         run: pip install -r Backend/requirement.txt
       
       - name: run tests
-        run: python manage.py test
+        run: |
+          cd Backend 
+          python manage.py test
         
