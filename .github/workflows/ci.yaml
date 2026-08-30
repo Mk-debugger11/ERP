@@ -35,12 +35,22 @@ jobs:
           cd Backend 
           python manage.py test
   
-  build-image:
+  build-and-push-image:
     needs: test-backend
     runs-on: ubuntu-latest
     steps:
+      - name: login to ghcr
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: checkout repo
         uses: actions/checkout@v4
 
       - name: build image
-        run: docker build -t erp ./Backend
+        run: docker build -t erp:${{ github.sha }} ./Backend
+        
+      - name: push image
+        run: docker push ghcr.io/${{ github.repository_owner }}/erp:${{ github.sha }}
