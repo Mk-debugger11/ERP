@@ -34,3 +34,13 @@ jobs:
         run: |
           cd Backend 
           python manage.py test
+  
+  build-image:
+    needs: test-backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: build image
+        run: docker build -t erp ./Backend
