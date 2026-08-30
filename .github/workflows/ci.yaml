@@ -29,5 +29,5 @@ jobs:
       - name: run tests
         working-directory: Backend
         env: 
-          DATABASE_URL: postgresql://testuser:123456@localhost:5432/erp
+          DATABASE_URL: postgresql://test_user:123456@localhost:5432/erp
         run: python manage.py test
