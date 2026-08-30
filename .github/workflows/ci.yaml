@@ -29,6 +29,8 @@ jobs:
       - name: run tests
         env: 
           DATABASE_URL: postgresql://test_user:123456@localhost:5432/erp
+          DEBUG: 'True'
+          ALLOWED_HOST: '*'
         run: |
           cd Backend 
           python manage.py test
