@@ -73,5 +73,5 @@ jobs:
       
       - name: ssh-to-vm
         run: |
-          ssh mukulmac@${{ secrets.TAILSCALE_IP }} \
+          ssh -o StrictHostKeyChecking=no mukulmac@${{ secrets.TAILSCALE_IP }} \
           whoami
