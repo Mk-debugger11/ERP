@@ -48,7 +48,12 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: creating multiarch builder
+        run: docker buildx create --name multiarch --driver docker-container --bootstrap
+      
+      - name: using mulitarch builder as default
+        run: docker buildx use multiarch
+        
       - name: checkout repo
         uses: actions/checkout@v4
 
