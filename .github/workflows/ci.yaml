@@ -53,12 +53,12 @@ jobs:
       
       - name: using mulitarch builder as default
         run: docker buildx use multiarch
-        
+
       - name: checkout repo
         uses: actions/checkout@v4
 
       - name: build image
-        run: docker buildx build --platform linux/arm64 -t ghcr.io/mk-debugger11/erp:${{ github.sha }} ./Backend
+        run: docker buildx build --platform linux/arm64 -t ghcr.io/mk-debugger11/erp:${{ github.sha }} ./Backend --push
 
-      - name: push image
-        run: docker push ghcr.io/mk-debugger11/erp:${{ github.sha }}
+      # - name: push image
+      #   run: docker push ghcr.io/mk-debugger11/erp:${{ github.sha }}
