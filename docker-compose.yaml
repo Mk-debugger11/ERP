@@ -35,7 +35,7 @@ services:
     depends_on:
      - django
   django:
-    build: ./Backend
+    image: ghcr.io/mk-debugger11/erp:ecad76aa8e8df6daf125254b9e6a0fc7f578ae00
     container_name: mukul_erp
     restart: unless-stopped
     networks:
