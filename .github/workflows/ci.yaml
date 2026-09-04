@@ -56,4 +56,4 @@ jobs:
         run: docker buildx build --platform linux/amd64 -t ghcr.io/mk-debugger11/erp:${{ github.sha }} ./Backend
 
       - name: push image
-        run: docker push ghcr.io/namespace/erp:${{ github.sha }}
+        run: docker push ghcr.io/mk-debugger11/erp:${{ github.sha }}
