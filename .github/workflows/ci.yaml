@@ -64,7 +64,7 @@ jobs:
       #   run: docker push ghcr.io/mk-debugger11/erp:${{ github.sha }}
   deploy:
     needs: build-and-push-image
-    runner: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: connect to tailscale 
         uses: tailscale/github-action@v4
