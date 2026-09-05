@@ -70,21 +70,10 @@ jobs:
         uses: tailscale/github-action@v4
         with: 
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-        
-      # - name: Setup SSH
-      #   uses: webfactory/ssh-agent@v0.9.1
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      # - name: ssh-to-vm
-      #   run: |
-      #     ssh -T mukulmac@100.127.19.53 "whoami"
-      - name: Test Tailscale connectivity
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: ssh-to-vm
         run: |
-          echo "=== Tailscale status ==="
-          tailscale status
-      
-          echo "=== Tailscale ping ==="
-          tailscale ping 100.127.19.53
-      
-          echo "=== Port 22 test ==="
-          nc -vz -w 10 100.127.19.53 22
+          ssh -T mukulmac@100.127.19.53 "whoami"
