@@ -70,10 +70,18 @@ jobs:
         uses: tailscale/github-action@v4
         with: 
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.1
+      # - name: Setup SSH
+      #   uses: webfactory/ssh-agent@v0.9.1
+      #   with:
+      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      # - name: ssh-to-vm
+      #   run: |
+      #     ssh -T -o ConnectTimeout=10 -o BatchMode=yes mukulmac@100.127.19.53 "whoami"
+      - name: ssh to vm
+        uses: appleboy/ssh-action@v1
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: ssh-to-vm
-        run: |
-          ssh -T -o ConnectTimeout=10 -o BatchMode=yes mukulmac@100.127.19.53 "whoami"
+          host: ${{ secrets.TAILSCALE_IP }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: whoami 
