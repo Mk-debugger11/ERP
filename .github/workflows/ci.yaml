@@ -86,4 +86,4 @@ jobs:
           port: 22
           script: |
             cd /home/mukulmac/ERP 
-            docker compose up
+            docker compose up -d
