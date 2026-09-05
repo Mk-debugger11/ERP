@@ -85,5 +85,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           script: |
-            cd /home/mukulmac/ERP \
+            cd /home/mukulmac/ERP 
             docker compose up
