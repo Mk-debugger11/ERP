@@ -76,4 +76,4 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: ssh-to-vm
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} mukulmac@100.127.19.53 "whoami"
+          ssh -T -o ConnectTimeout=10 -o BatchMode=yes mukulmac@100.127.19.53 "whoami"
