@@ -60,8 +60,6 @@ jobs:
       - name: build image
         run: docker buildx build --platform linux/arm64 -t ghcr.io/mk-debugger11/erp:${{ github.sha }} ./Backend --push
 
-      # - name: push image
-      #   run: docker push ghcr.io/mk-debugger11/erp:${{ github.sha }}
   deploy:
     needs: build-and-push-image
     runs-on: ubuntu-latest
@@ -70,13 +68,6 @@ jobs:
         uses: tailscale/github-action@v4
         with: 
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-      # - name: Setup SSH
-      #   uses: webfactory/ssh-agent@v0.9.1
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      # - name: ssh-to-vm
-      #   run: |
-      #     ssh -T -o ConnectTimeout=10 -o BatchMode=yes mukulmac@100.127.19.53 "whoami"
       - name: ssh to vm
         uses: appleboy/ssh-action@v1
         with:
@@ -86,4 +77,6 @@ jobs:
           port: 22
           script: |
             cd /home/mukulmac/ERP 
+            export IMAGE_TAG=${{ github.sha }}
+            docker compose pull
             docker compose up -d
