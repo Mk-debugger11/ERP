@@ -1,10 +1,17 @@
-from rest_framework.test import APITestCase
-from rest_framework import status
 from django.urls import reverse
 from django.utils import timezone
+from rest_framework import status
+from rest_framework.test import APITestCase
+
 from hr_department.employees.models import (
-    Department, Designation, EmploymentType, Branch, Team, Employee
+    Branch,
+    Department,
+    Designation,
+    Employee,
+    EmploymentType,
+    Team,
 )
+
 
 class EmployeeAPITests(APITestCase):
     

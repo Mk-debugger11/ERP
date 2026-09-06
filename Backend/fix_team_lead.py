@@ -24,7 +24,6 @@ with open("seed_postgres.sql", "w") as f:
                 # I will replace the column name back to include team_lead_id but force the value to NULL.
                 
                 # We can just change the column name to NOT include team_lead_id and remove the value, or keep the column and set value to NULL.
-                pass
                 
             # A safer regex to replace the team_lead_id value with NULL:
             # We know it looks like: , 3, 113, 'Responsible

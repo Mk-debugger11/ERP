@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 
+
 class CustomCorsMiddleware:
     def __init__(self, get_response): #class initialisation
         self.get_response = get_response

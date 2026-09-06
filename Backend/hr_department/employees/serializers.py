@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Department, Designation, EmploymentType, Branch, Team, Employee
+
+from .models import Branch, Department, Designation, Employee, EmploymentType, Team
 
 
 class DepartmentSerializer(serializers.ModelSerializer):

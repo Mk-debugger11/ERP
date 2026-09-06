@@ -1,5 +1,6 @@
 import json
 
+
 def format_value(v):
     if v is None:
         return "NULL"
@@ -12,7 +13,8 @@ def format_value(v):
         s = str(v).replace("'", "''")
         return f"'{s}'"
 
-data = json.load(open("db_backup.json"))
+with open("db_backup.json") as f:
+    data = json.load(f)
 
 # Group data by model
 models_data = {}

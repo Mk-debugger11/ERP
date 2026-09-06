@@ -1,13 +1,14 @@
 from rest_framework import viewsets
-from .models import Department, Designation, EmploymentType, Branch, Team, Employee
+
+from .models import Branch, Department, Designation, Employee, EmploymentType, Team
 from .serializers import (
+    BranchSerializer,
     DepartmentSerializer,
     DesignationSerializer,
-    EmploymentTypeSerializer,
-    BranchSerializer,
-    TeamSerializer,
-    EmployeeSerializer,
     EmployeeDetailSerializer,
+    EmployeeSerializer,
+    EmploymentTypeSerializer,
+    TeamSerializer,
 )
 
 

@@ -1,5 +1,6 @@
 import re
 
+
 def split_values(s):
     # Splits by comma, respecting single quotes
     result = []

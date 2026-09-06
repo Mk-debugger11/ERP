@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Department, Designation, EmploymentType, Branch, Team, Employee
+
+from .models import Branch, Department, Designation, Employee, EmploymentType, Team
 
 
 @admin.register(Department)

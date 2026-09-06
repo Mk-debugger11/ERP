@@ -1,11 +1,12 @@
 from rest_framework.routers import DefaultRouter
+
 from .views import (
+    BranchViewSet,
     DepartmentViewSet,
     DesignationViewSet,
-    EmploymentTypeViewSet,
-    BranchViewSet,
-    TeamViewSet,
     EmployeeViewSet,
+    EmploymentTypeViewSet,
+    TeamViewSet,
 )
 
 router = DefaultRouter()
